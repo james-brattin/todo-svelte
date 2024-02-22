@@ -1,14 +1,7 @@
 import * as database from '$lib/server/database.js';
 
-export function load({ cookies }) {
-	let userid = cookies.get('userid');
-
-	if (!userid) {
-		userid = crypto.randomUUID();
-		cookies.set('userid', userid, { path: '/' });
-	}
-
+export async function load() {
 	return {
-		todos: database.getTodos(userid)
+		todos: await database.getAllTodos()
 	};
 }
