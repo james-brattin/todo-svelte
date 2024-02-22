@@ -1,2 +1,22 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	export let data;
+</script>
+
+<div class="centered">
+	<h1>Todos:</h1>
+
+	<ul>
+		{#each data.todos as todo (todo.id)}
+			<li>
+				<span>{todo.description}</span>
+			</li>
+		{/each}
+	</ul>
+</div>
+
+<style>
+	.centered {
+		max-width: 20em;
+		margin: 0 auto;
+	}
+</style>
