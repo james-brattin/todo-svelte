@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@libsql/client": "^0.5.1"
+		"@libsql/client": "^0.5.1",
+		"dotenv": "^16.4.5"
 	}
 }
